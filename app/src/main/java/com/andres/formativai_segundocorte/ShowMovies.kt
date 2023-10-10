@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
+import android.widget.Toast
 
 class ShowMovies : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -39,6 +40,7 @@ class ShowMovies : AppCompatActivity() {
                 movieRepository.deleteMovie(movie.code)
                 // Actualizar la vista
                 linearLayoutMovies.removeView(movieDetailsLayout)
+                Toast.makeText(this, "Movie delete successfully!", Toast.LENGTH_SHORT).show()
             }
 
             // Agregar el botón de editar con el listener

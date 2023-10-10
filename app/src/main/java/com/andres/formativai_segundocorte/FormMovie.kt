@@ -1,7 +1,9 @@
 package com.andres.formativai_segundocorte
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.inputmethod.InputMethodManager
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.EditText
@@ -22,7 +24,7 @@ class FormMovie : AppCompatActivity() {
         val btnCancelMovie = findViewById<Button>(R.id.btnCancelMovie)
 
         // Configurar valores para el Spinner
-        val genres = arrayOf("ACCION", "DRAMA", "MISTERIO", "TERROR")
+        val genres = arrayOf("Acción", "Drama", "Misterio", "Terror")
         val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, genres)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spGenreMovie.adapter = adapter
@@ -33,6 +35,11 @@ class FormMovie : AppCompatActivity() {
             val movieName = etMovieName.text.toString()
             val director = etDirector.text.toString()
             val genre = spGenreMovie.selectedItem.toString()
+
+            if (code.isBlank() || movieName.isBlank() || director.isBlank()) {
+                Toast.makeText(this, "No pueden quedar campos vacios.", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
 
             val movie = Movie(code, movieName, director, genre)
 
@@ -45,7 +52,18 @@ class FormMovie : AppCompatActivity() {
             // Mostrar un mensaje de confirmación
             Toast.makeText(this, "Movie added successfully!", Toast.LENGTH_SHORT).show()
 
+            // Limpiar los campos después de enviar los datos
+            etCode.text.clear()
+            etMovieName.text.clear()
+            etDirector.text.clear()
+            spGenreMovie.setSelection(0)
 
+            // Ocultar el teclado virtual
+            val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            imm.hideSoftInputFromWindow(etCode.windowToken, 0)
+
+            // Solicitar el foco en etCode
+            etCode.requestFocus()
 
             // Leer la película recién agregada y mostrar sus detalles
             val addedMovie = movieRepository.getMovie(code)
@@ -59,8 +77,6 @@ class FormMovie : AppCompatActivity() {
             } else {
                 Toast.makeText(this, "Failed to retrieve added movie details.", Toast.LENGTH_LONG).show()
             }
-
-
         }
 
         // Configurar acción para el botón "Cancel Movie"

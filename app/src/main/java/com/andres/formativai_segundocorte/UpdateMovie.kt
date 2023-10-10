@@ -43,7 +43,7 @@ class UpdateMovie : AppCompatActivity() {
 
 
         // Configurar el spinner
-        val genres = arrayOf("Action", "Drama", "Mystery", "Horror")
+        val genres = arrayOf("Acción", "Drama", "Misterio", "Terror")
         val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, genres)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         spEditGenreMovie.adapter = adapter
@@ -70,6 +70,11 @@ class UpdateMovie : AppCompatActivity() {
             val updatedMovieName = etEditMovieName.text.toString()
             val updatedDirector = etEditDirector.text.toString()
             val updatedGenre = spEditGenreMovie.selectedItem.toString()
+
+            if (updatedMovieName.isBlank() || updatedDirector.isBlank()) {
+                Toast.makeText(this, "No pueden quedar campos vacios.", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
 
             // Crear un objeto Movie con los valores actualizados
             val updatedMovie = Movie(updatedCode, updatedMovieName, updatedDirector, updatedGenre)

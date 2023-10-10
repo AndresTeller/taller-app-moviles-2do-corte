@@ -32,14 +32,15 @@
             android:layout_height="wrap_content"
             android:text="Code: "
             android:textColor="@color/white"
-            android:textSize="18dp" />
+            android:textSize="18dp"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/etCode"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:background="@drawable/edittext_background"
-            android:inputType="text"
+            android:inputType="number"
             android:padding="10dp" />
     </LinearLayout>
 
@@ -60,7 +61,8 @@
             android:layout_height="wrap_content"
             android:text="Movie name: "
             android:textColor="@color/white"
-            android:textSize="18dp" />
+            android:textSize="18dp"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/etMovieName"
@@ -88,7 +90,8 @@
             android:layout_height="wrap_content"
             android:text="Director: "
             android:textColor="@color/white"
-            android:textSize="18dp" />
+            android:textSize="18dp"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/etDirector"
@@ -117,12 +120,14 @@
             android:layout_height="wrap_content"
             android:text="Género: "
             android:textColor="@color/white"
-            android:textSize="18dp" />
+            android:textSize="18dp"
+            android:textStyle="bold"/>
 
         <Spinner
             android:id="@+id/spGenreMovie"
             android:layout_width="400px"
             android:layout_height="120px"
+            android:textSize="20sp"
             android:background="@drawable/spinner_background" />
     </LinearLayout>
 
@@ -148,7 +153,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
         android:background="@drawable/style_buttom"
-        android:text="CANCEL"
+        android:text="LIMPIAR"
         android:textColor="#ffffff"
         android:textSize="19sp"
         android:textStyle="bold"
