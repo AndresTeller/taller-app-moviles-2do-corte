@@ -63,7 +63,6 @@ class FormMovie : AppCompatActivity() {
 
         }
 
-
         // Configurar acción para el botón "Cancel Movie"
         btnCancelMovie.setOnClickListener {
             etCode.text.clear()

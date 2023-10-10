@@ -28,7 +28,7 @@ class ShowMovies : AppCompatActivity() {
 
             // Mostrar la información de la película
             textViewCode.text = "Code: ${movie.code}"
-            textViewMovieName.text = "Movie name: ${movie.movieName}"
+            textViewMovieName.text = "Name: ${movie.movieName}"
             textViewDirector.text = "Director: ${movie.director}"
             textViewGenre.text = "Genre: ${movie.genre}"
 

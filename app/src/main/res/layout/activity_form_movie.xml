@@ -4,116 +4,157 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#0F1223"
     tools:context=".FormMovie">
 
     <!-- CODE INPUT -->
+
+    <!-- MOVIE NAME INPUT -->
+
+    <!-- DIRECTOR INPUT -->
+
+    <!-- GENRE MOVIE INPUT -->
+
     <LinearLayout
         android:id="@+id/llCode"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
         android:orientation="horizontal"
-        >
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.488"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
         <TextView
             android:id="@+id/tvCode"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Code: "
-            />
+            android:textColor="@color/white"
+            android:textSize="18dp" />
+
         <EditText
             android:id="@+id/etCode"
-            android:layout_width="100dp"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
-            />
+            android:background="@drawable/edittext_background"
+            android:inputType="text"
+            android:padding="10dp" />
     </LinearLayout>
 
-    <!-- MOVIE NAME INPUT -->
     <LinearLayout
         android:id="@+id/llMovieName"
-        app:layout_constraintTop_toBottomOf="@+id/llCode"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:orientation="horizontal"
-        >
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.279"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/llCode">
+
         <TextView
             android:id="@+id/tvMovieName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Movie name: "
-            />
+            android:textColor="@color/white"
+            android:textSize="18dp" />
+
         <EditText
             android:id="@+id/etMovieName"
-            android:layout_width="100dp"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
-            />
+            android:background="@drawable/edittext_background"
+            android:inputType="text"
+            android:padding="10dp" />
     </LinearLayout>
 
-    <!-- DIRECTOR INPUT -->
     <LinearLayout
         android:id="@+id/llDirector"
-        app:layout_constraintTop_toBottomOf="@+id/llMovieName"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:orientation="horizontal"
-        >
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.433"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/llMovieName">
+
         <TextView
             android:id="@+id/tvDirector"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Director: "
-            />
+            android:textColor="@color/white"
+            android:textSize="18dp" />
+
         <EditText
             android:id="@+id/etDirector"
-            android:layout_width="100dp"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
-            />
+            android:background="@drawable/edittext_background"
+            android:inputType="text"
+            android:padding="10dp" />
     </LinearLayout>
 
-    <!-- GENRE MOVIE INPUT -->
+
     <LinearLayout
-        android:id="@+id/llGenreMovie"
-        app:layout_constraintTop_toBottomOf="@+id/llDirector"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/llSpinner"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:orientation="horizontal"
-        >
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.442"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/llDirector">
+
+        <TextView
+            android:id="@+id/tvSpinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Género: "
+            android:textColor="@color/white"
+            android:textSize="18dp" />
+
         <Spinner
             android:id="@+id/spGenreMovie"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            />
+            android:layout_width="400px"
+            android:layout_height="120px"
+            android:background="@drawable/spinner_background" />
     </LinearLayout>
 
-    <!--  ADD AND DELETE BUTTONS -->
-    <LinearLayout
-        android:id="@+id/llActions"
-        app:layout_constraintTop_toBottomOf="@+id/llGenreMovie"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_width="wrap_content"
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnAddMovie"
+        style="@android:style/Widget.Button"
+        android:layout_width="400px"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        >
-        <Button
-            android:id="@+id/btnAddMovie"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="add"
-            />
-        <Button
-            android:id="@+id/btnCancelMovie"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Cancel"
-            />
-    </LinearLayout>
+        android:layout_marginTop="52dp"
+        android:background="@drawable/style_buttom"
+        android:text="AGREGAR"
+        android:textColor="#ffffff"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/llSpinner" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnCancelMovie"
+        android:layout_width="400px"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/style_buttom"
+        android:text="CANCEL"
+        android:textColor="#ffffff"
+        android:textSize="19sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnAddMovie" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
