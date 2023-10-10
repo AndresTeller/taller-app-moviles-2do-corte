@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UpdateMovie">
+
+
+    <!-- CODE INPUT -->
+    <LinearLayout
+        android:id="@+id/llEditCode"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:id="@+id/tvEditCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Code: "
+            />
+        <EditText
+            android:id="@+id/etEditCode"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            />
+    </LinearLayout>
+
+    <!-- MOVIE NAME INPUT -->
+    <LinearLayout
+        android:id="@+id/llEditMovieName"
+        app:layout_constraintTop_toBottomOf="@+id/llEditCode"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:id="@+id/tvEditMovieName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Movie name: "
+            />
+        <EditText
+            android:id="@+id/etEditMovieName"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            />
+    </LinearLayout>
+
+    <!-- DIRECTOR INPUT -->
+    <LinearLayout
+        android:id="@+id/llEditDirector"
+        app:layout_constraintTop_toBottomOf="@+id/llEditMovieName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:id="@+id/tvEditDirector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Director: "
+            />
+        <EditText
+            android:id="@+id/etEditDirector"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            />
+    </LinearLayout>
+
+    <!-- GENRE MOVIE INPUT -->
+    <LinearLayout
+        android:id="@+id/llEditGenreMovie"
+        app:layout_constraintTop_toBottomOf="@+id/llEditDirector"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <Spinner
+            android:id="@+id/spEditGenreMovie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+    </LinearLayout>
+
+    <!--  UPDATE AND DELETE BUTTONS -->
+    <LinearLayout
+        android:id="@+id/llEditActions"
+        app:layout_constraintTop_toBottomOf="@+id/llEditGenreMovie"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <Button
+            android:id="@+id/btnEditMovie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Edit"
+            />
+        <Button
+            android:id="@+id/btnEditCancelMovie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancel"
+            />
+    </LinearLayout>
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
