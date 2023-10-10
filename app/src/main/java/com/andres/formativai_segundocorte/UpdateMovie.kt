@@ -87,7 +87,12 @@ class UpdateMovie : AppCompatActivity() {
             val resultIntent = Intent()
             resultIntent.putExtra("updated_movie", updatedMovie)
             setResult(Activity.RESULT_OK, resultIntent)
-            finish()
+
+            // Iniciar la actividad MainActivity
+            val mainActivityIntent = Intent(this, MainActivity::class.java)
+            startActivity(mainActivityIntent)
+
+            finish() // Finalizar la actividad UpdateMovie
         }
 
 
