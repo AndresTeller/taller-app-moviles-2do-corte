@@ -4,28 +4,70 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#0F1223"
     android:padding="50dp"
     tools:context=".MainActivity">
 
-    <Button
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="360dp"
+        android:layout_height="52dp"
+        android:gravity="center"
+        android:text="APP DE PELICULAS"
+        android:textColor="@color/white"
+        android:textSize="35dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnShow"
+        style="@android:style/Widget.Button"
+        android:layout_width="186dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/style_buttom"
+        android:onClick="onShowButtonClick"
+        android:text="Show"
+        android:textColor="#ffffff"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.417"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnAdd" />
+
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnAdd"
-        android:layout_width="wrap_content"
+        style="@android:style/Widget.Button"
+        android:layout_width="500px"
         android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/style_buttom"
         android:onClick="onAddButtonClick"
         android:text="Add"
-        app:layout_constraintEnd_toStartOf="@+id/btnShow"
-
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="79dp" />
-
-
-    <Button
-        android:id="@+id/btnShow"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Show"
-        android:onClick="onShowButtonClick"
+        android:textColor="#ffffff"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:layout_editor_absoluteY="81dp" />
+        app:layout_constraintHorizontal_bias="0.397"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="355dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:srcCompat="@drawable/imgprincipal" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
