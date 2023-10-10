@@ -36,6 +36,12 @@ class UpdateMovie : AppCompatActivity() {
         etEditMovieName.setText(movieName)
         etEditDirector.setText(director)
 
+        // Deshabilitar interacciones para etEditCode
+        etEditCode.isEnabled = false
+        etEditCode.isFocusable = false
+        etEditCode.isClickable = false
+
+
         // Configurar el spinner
         val genres = arrayOf("Action", "Drama", "Mystery", "Horror")
         val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, genres)

@@ -27,6 +27,8 @@
             android:id="@+id/etEditCode"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
+            android:inputType="none"
+            android:background="@null"
             />
     </LinearLayout>
 
